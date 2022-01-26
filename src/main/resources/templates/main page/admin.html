@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>admin page</title>
+    <link rel="stylesheet" href="/css/mainpage.css">
+    <style>
+        #flex-1-1-4 {
+            padding-left: 2%;
+            width: 18%;
+        }
+        #flex-1-1-4-img {
+            cursor: pointer;
+            height: 100%;
+        }
+        #flex-1-1-1 {
+            width: 68%;
+        }
+        #flex-1-1-2 {
+            width: 7%;
+        }
+        #flex-1-1-2-img {
+            cursor: pointer;
+            height: 100%;
+        }
+        #flex-1-1-3 {
+            width: 5%;
+        }
+        #flex-1-1-3-img {
+            cursor: pointer;
+            height: 100%;
+        }
+    </style>
+</head>
+<body style="margin: 0">
+<div id="main">
+    <div id="flex-1">
+        <div id="flex-1-1">
+            <div id="flex-1-1-box">
+                <div id="flex-1-1-4">
+                    <img id="flex-1-1-4-img" src="/img/technofix.svg" alt="">
+                </div>
+                <div id="flex-1-1-3">
+                    <img id="flex-1-1-3-img" src="/img/ext.svg" alt="">
+                </div>
+            </div>
+        </div>
+        <div id="flex-1-2">
+            <img id="flex-1-2-pic" src="/img/comp.svg" alt="">
+        </div>
+        <div id="flex-1-4">
+            <div id="flex-1-4-block-1">
+                <span id="flex-1-4-text-1">
+                    МАЙСТЕРНЯ З РЕМОНТУ КОМП'ЮТЕРІВ
+                </span>
+            </div>
+            <div id="flex-1-4-block-2">
+                <span id="flex-1-4-text-2">
+                    «ТЕХНОФІКС»
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="footer"></div>
+
+
+<form method="POST" action="/" id="goMainPageForm">
+    <input id="goMainPageTextEmail" type="hidden" name="email">
+    <input id="goMainPageTextPassword" type="hidden" name="password">
+</form>
+
+<form method="POST" action="/" id="logoutForm">
+    <input id="logoutTextEmail" type="hidden" name="email">
+    <input id="logoutTextPassword" type="hidden" name="password">
+</form>
+
+<form method="POST" action="/order" id="makeOrderForm">
+    <input id="makeOrderTextEmail" type="hidden" name="email">
+    <input id="makeOrderTextPassword" type="hidden" name="password">
+</form>
+
+<form method="POST" action="/list" id="getListForm">
+    <input id="getListTextEmail" type="hidden" name="email">
+    <input id="getListTextPassword" type="hidden" name="password">
+</form>
+
+
+<script src="js/redirect_links/admin.js"></script>
+<script>
+    button = document.getElementById("flex-1-3-button");
+    buttonText = document.getElementById("flex-1-3-button-text");
+
+    button.addEventListener('click', function () {
+        button.style.width="44%"
+        button.style.height = "45px"
+        buttonText.style.fontSize = "30px"
+        setTimeout(()=>{
+            button.style.width="50%"
+            button.style.height = "55px";
+            buttonText.style.fontSize = "36px"
+        }, 100)
+    })
+</script>
+</body>
+</html>
