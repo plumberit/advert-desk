@@ -10,24 +10,6 @@ public class Advertisement {
 
     private String surname;
 
-    private String communication;
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public Long getClientID() {
-        return clientID;
-    }
-
-    public void setClientID(Long clientID) {
-        this.clientID = clientID;
-    }
-
     public String getName() {
         return name;
     }
@@ -50,6 +32,24 @@ public class Advertisement {
 
     public void setCommunication(String communication) {
         this.communication = communication;
+    }
+
+    private String communication;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Long getClientID() {
+        return clientID;
+    }
+
+    public void setClientID(Long clientID) {
+        this.clientID = clientID;
     }
 
     public String getDescription() {
