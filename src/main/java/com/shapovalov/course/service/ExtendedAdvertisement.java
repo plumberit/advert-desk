@@ -47,7 +47,6 @@ public class ExtendedAdvertisement {
         this.clientID = clientID;
     }
 
-
     public String getCommunication() {
         return communication;
     }
