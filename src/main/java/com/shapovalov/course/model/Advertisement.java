@@ -2,13 +2,37 @@ package com.shapovalov.course.model;
 
 import javax.persistence.*;
 
+@Entity
 public class Advertisement {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
 
     private Long clientID;
 
     private String name;
 
     private String surname;
+
+    private String communication;
+    @Lob
+    private String description;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Long getClientID() {
+        return clientID;
+    }
+
+    public void setClientID(Long clientID) {
+        this.clientID = clientID;
+    }
 
     public String getName() {
         return name;
@@ -32,24 +56,6 @@ public class Advertisement {
 
     public void setCommunication(String communication) {
         this.communication = communication;
-    }
-
-    private String communication;
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public Long getClientID() {
-        return clientID;
-    }
-
-    public void setClientID(Long clientID) {
-        this.clientID = clientID;
     }
 
     public String getDescription() {
