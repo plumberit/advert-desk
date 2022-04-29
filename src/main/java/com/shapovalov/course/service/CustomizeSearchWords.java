@@ -10,13 +10,6 @@ public class CustomizeSearchWords {
 
         for (int i = 0; i < searchedAdvertsWords.size(); i++) {
             updateList.add(new AdvertisementSearchModel());
-        }
-
-        for (int i = 0; i < searchedAdvertsWords.size(); i++) {
-            updateList.get(i).setId(searchedAdvertsWords.get(i).getId());
-        }
-
-        for (int i = 0; i < searchedAdvertsWords.size(); i++) {
             updateList.get(i).setListOfWords(new ArrayList<>());
         }
 
