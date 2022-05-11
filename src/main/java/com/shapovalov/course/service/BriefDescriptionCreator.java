@@ -8,12 +8,11 @@ public class BriefDescriptionCreator {
 
     public static String[] getBriefDescriptions(Iterable<Advertisement> advertisements) {
         String advertDescription;
+        ArrayList<ArrayList<String>> superList =
+                new ArrayList<ArrayList<String>>();
         ArrayList<String []> listOfArraysWithWords = new ArrayList<>();
         String [] arrayWithWords;
         int advertsNumber = 0;
-
-        ArrayList<ArrayList<String>> superList =
-                new ArrayList<ArrayList<String>>();
 
         for (Advertisement adv : advertisements) {
             advertDescription = adv.getDescription();

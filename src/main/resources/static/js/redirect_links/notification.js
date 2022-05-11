@@ -1,7 +1,5 @@
 pass = localStorage.getItem("password_technofix");
 email = localStorage.getItem("email_technofix");
-
-
 //main page logo button
 let goMainPageButton = document.getElementById('flex-1-1-1-img');
 goMainPageButton.onclick = goMainPage;

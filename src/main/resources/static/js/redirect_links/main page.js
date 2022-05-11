@@ -21,10 +21,6 @@ function goMainPage() {
     document.getElementById("goMainPageForm").submit();
 }
 
-// войти в админ акк button
-let loginAdminButton = document.getElementById('flex-1-1-3-text');
-loginAdminButton.onclick = loginAdmin;
-
 function loginAdmin() {
     if (email === null || email === '') {
         document.getElementById('loginAdminTextEmail').value = "none";
@@ -47,12 +43,6 @@ makeOrderButton.onclick = makeOrder;
 makeOrderButtonText.onclick = makeOrder;
 
 function makeOrder() {
-    if (email === null || email === '') {
-        document.getElementById('makeOrderTextEmail').value = "none";
-    } else {
-        document.getElementById('makeOrderTextEmail').value = email;
-    }
-
     if (pass === null || pass === '') {
         document.getElementById('makeOrderTextPassword').value = "none";
     } else {

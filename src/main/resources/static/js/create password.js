@@ -1,5 +1,4 @@
 let loginButton = document.getElementById("loginAdminButton");
-
 loginButton.onclick = handlePassword;
 
 function handlePassword() {
