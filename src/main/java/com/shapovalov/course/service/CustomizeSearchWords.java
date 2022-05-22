@@ -15,12 +15,8 @@ public class CustomizeSearchWords {
 
         for (int i = 0; i < searchedAdvertsWords.size(); i++) {
             for (int j = 0; j < searchedAdvertsWords.get(i).getListOfWords().size(); j++) {
-
                 String word = searchedAdvertsWords.get(i).getListOfWords().get(j);
-
-                WordUpdater wordUpdater = new WordUpdater();
                 String updatedWord = wordUpdater.update(word);
-
                 updateList.get(i).getListOfWords().add(j, updatedWord);
             }
         }

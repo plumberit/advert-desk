@@ -12,18 +12,17 @@ public class BriefDescriptionCreator {
         String [] arrayWithWords;
         int advertsNumber = 0;
 
+        for (int i = 0; i <advertsNumber; i++) {
+            for (int j = 0; j <listOfArraysWithWords.get(i).length; j++) {
+                superList.get(i).add(listOfArraysWithWords.get(i)[j]);
+            }
+        }
+
         for (Advertisement adv : advertisements) {
             advertDescription = adv.getDescription();
             arrayWithWords = advertDescription.split(" ");
             listOfArraysWithWords.add(arrayWithWords);
             advertsNumber++;
-        }
-
-        for (int i = 0; i <advertsNumber; i++) {
-            superList.add(new ArrayList<>());
-            for (int j = 0; j <listOfArraysWithWords.get(i).length; j++) {
-                superList.get(i).add(listOfArraysWithWords.get(i)[j]);
-            }
         }
 
         for (int i = 0; i < superList.size(); i++) {

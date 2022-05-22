@@ -10,8 +10,6 @@ public class ExtendedAdvertisementCreator {
         String [] arr = BriefDescriptionCreator.getBriefDescriptions(advertisements);
         ExtendedAdvertisement [] extendedAdvertisements = new ExtendedAdvertisement[arr.length];
 
-
-
         for (int i = 0; i < arr.length; i++) {
             extendedAdvertisements[i] = new ExtendedAdvertisement();
         }
@@ -25,8 +23,6 @@ public class ExtendedAdvertisementCreator {
             extendedAdvertisements[i].setId(advertisementsList.get(i).getId());
             extendedAdvertisements[i].setSurname(advertisementsList.get(i).getSurname());
             extendedAdvertisements[i].setCommunication(advertisementsList.get(i).getCommunication());
-            extendedAdvertisements[i].setDescription(advertisementsList.get(i).getDescription());
-            extendedAdvertisements[i].setBriefDescription(arr[i]);
         }
         return extendedAdvertisements;
     }
