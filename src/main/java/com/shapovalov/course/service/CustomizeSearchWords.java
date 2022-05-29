@@ -18,6 +18,8 @@ public class CustomizeSearchWords {
                 String word = searchedAdvertsWords.get(i).getListOfWords().get(j);
                 String updatedWord = wordUpdater.update(word);
                 updateList.get(i).getListOfWords().add(j, updatedWord);
+                updateList.add(new AdvertisementSearchModel());
+                updateList.get(i).setListOfWords(new ArrayList<>());
             }
         }
 
