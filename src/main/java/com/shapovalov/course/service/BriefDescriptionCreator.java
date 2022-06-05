@@ -23,6 +23,9 @@ public class BriefDescriptionCreator {
             arrayWithWords = advertDescription.split(" ");
             listOfArraysWithWords.add(arrayWithWords);
             advertsNumber++;
+            for (int j = 0; j <listOfArraysWithWords.get(i).length; j++) {
+                superList.get(i).add(listOfArraysWithWords.get(i)[j]);
+            }
         }
 
         for (int i = 0; i < superList.size(); i++) {

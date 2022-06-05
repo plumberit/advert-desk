@@ -24,6 +24,8 @@ public class AdvertisementSearcher {
             for (int j = 0; j < searchedAdvertsWordsUpdate.get(i).getListOfWords().size(); j++) {
                 if (searchInput.equals(searchedAdvertsWordsUpdate.get(i).getListOfWords().get(j))) {
                     listOfSearchedAdvertsID.add(searchedAdvertsWordsUpdate.get(i).getId());
+                    ArrayList<AdvertisementSearchModel> searchedAdvertsWordsUpdate =
+                            CustomizeSearchWords.customize(searchedAdvertsWords);
                 }
             }
         }
