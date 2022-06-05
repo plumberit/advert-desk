@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class WordUpdater {
 
-    char [] banList = {'!', '?', '%', '#', '@', '"', ':', ',', '<', '>', '(',
+    char [] banList = {'!', '?', '%', '#', '@', '"', ';' ':', ',', '<', '>', '(',
             ')', '-', '_', '=', '+', '&', '^', '$', '*', '№', '.'};
 
     public String update(String word) {

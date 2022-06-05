@@ -26,6 +26,7 @@ public class ExtendedAdvertisementCreator {
             extendedAdvertisements[i].setCommunication(advertisementsList.get(i).getCommunication());
             for(Advertisement adv : advertisements) {
                 advertisementsList.add(adv);
+                extendedAdvertisements[i] = new ExtendedAdvertisement();
             }
         }
         return extendedAdvertisements;
