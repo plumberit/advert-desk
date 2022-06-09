@@ -3,31 +3,30 @@ package com.shapovalov.course.service;
 import com.shapovalov.course.model.Advertisement;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
-public class ExtendedAdvertisementCreator {
+public class AdvertisementMaterials {
 
-    public static ExtendedAdvertisement[] improveAdvertisements(Iterable<Advertisement> advertisements) {
-        String [] arr = BriefDescriptionCreator.getBriefDescriptions(advertisements);
-        ExtendedAdvertisement [] extendedAdvertisements = new ExtendedAdvertisement[arr.length];
 
-        for (int i = 0; i < arr.length; i++) {
-            extendedAdvertisements[i] = new ExtendedAdvertisement();
-            advertisementsList.add(adv);
+    public static ArrayList<AdvertisementSearchModel> searchAdvertModelListCreate(ArrayList<Advertisement> advertisements) {
+        ArrayList<AdvertisementSearchModel> searchAdvertModelList =
+                new ArrayList<>();
+        for (int i = 0; i < advertisements.size(); i++) {
+            String name = advertisements.get(i).getName();
+            String surname = advertisements.get(i).getSurname();
+            String communication = advertisements.get(i).getCommunication();
+            String description = advertisements.get(i).getDescription();
+
+            String [] communicationArr = communication.split(" ");
+            String [] descriptionArr = description.split(" ");
+
+            ArrayList<String> materialsList = new ArrayList<>();
+            materialsList.add(name);
+            materialsList.add(surname);
+            materialsList.addAll(Arrays.asList(communicationArr));
+            materialsList.addAll(Arrays.asList(descriptionArr));
+            searchAdvertModelList.add(new AdvertisementSearchModel(advertisements.get(i).getId(), materialsList));
         }
-
-        ArrayList<Advertisement> advertisementsList = new ArrayList<>();
-        for(Advertisement adv : advertisements) {
-            advertisementsList.add(adv);
-        }
-
-        for (int i = 0; i < arr.length; i++) {
-            extendedAdvertisements[i].setId(advertisementsList.get(i).getId());
-            extendedAdvertisements[i].setSurname(advertisementsList.get(i).getSurname());
-            extendedAdvertisements[i].setCommunication(advertisementsList.get(i).getCommunication());
-            for(Advertisement adv : advertisements) {
-                extendedAdvertisements[i] = new ExtendedAdvertisement();
-            }
-        }
-        return extendedAdvertisements;
+        return searchAdvertModelList;
     }
 }
