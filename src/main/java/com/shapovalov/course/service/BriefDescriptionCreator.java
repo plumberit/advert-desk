@@ -12,17 +12,19 @@ public class BriefDescriptionCreator {
         String [] arrayWithWords;
         int advertsNumber = 0;
 
-        for (int i = 0; i <advertsNumber; i++) {
-            for (int j = 0; j <listOfArraysWithWords.get(i).length; j++) {
-                superList.get(i).add(listOfArraysWithWords.get(i)[j]);
-            }
-        }
-
         for (Advertisement adv : advertisements) {
             advertDescription = adv.getDescription();
             arrayWithWords = advertDescription.split(" ");
             listOfArraysWithWords.add(arrayWithWords);
             advertsNumber++;
+        }
+
+
+        ArrayList<ArrayList<String>> superList =
+                new ArrayList<ArrayList<String>>();
+
+        for (int i = 0; i <advertsNumber; i++) {
+            superList.add(new ArrayList<>());
             for (int j = 0; j <listOfArraysWithWords.get(i).length; j++) {
                 superList.get(i).add(listOfArraysWithWords.get(i)[j]);
             }
@@ -43,6 +45,9 @@ public class BriefDescriptionCreator {
             arr[i] = arr[i] + "...";
         }
 
+        //for (int i = 0; i < arr.length; i++) {
+        //System.out.println(arr[i]);
+        //}
         return arr;
     }
 }

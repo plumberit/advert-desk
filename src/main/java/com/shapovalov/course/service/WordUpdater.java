@@ -4,13 +4,17 @@ import java.util.ArrayList;
 
 public class WordUpdater {
 
-    char [] banList = {'!', '?', '%', '#', '@', '"', ';' ':', ',', '<', '>', '(',
+    char [] banList = {'!', '?', '%', '#', '@', '"', ':', ';', '/', ',', '<', '>', '(',
             ')', '-', '_', '=', '+', '&', '^', '$', '*', '№', '.'};
 
     public String update(String word) {
 
         char [] charArrOfSymbols = word.toCharArray();
         ArrayList<Character> charListOfSymbols = new ArrayList<>();
+
+        for (int i = 0; i <charArrOfSymbols.length; i++) {
+            charListOfSymbols.add(charArrOfSymbols[i]);
+        }
 
         for (int i = 0; i < charListOfSymbols.size(); i++) {
             for (int j = 0; j < banList.length; j++) {
@@ -35,3 +39,4 @@ public class WordUpdater {
         return stringBuilder.toString();
     }
 }
+

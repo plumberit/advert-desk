@@ -3,30 +3,37 @@ package com.shapovalov.course.service;
 import com.shapovalov.course.model.Advertisement;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 
-public class AdvertisementMaterials {
+public class ExtendedAdvertisementCreator {
+
+    public static ExtendedAdvertisement[] improveAdvertisements(Iterable<Advertisement> advertisements) {
+        String [] arr = BriefDescriptionCreator.getBriefDescriptions(advertisements);
 
 
-    public static ArrayList<AdvertisementSearchModel> searchAdvertModelListCreate(ArrayList<Advertisement> advertisements) {
-        ArrayList<AdvertisementSearchModel> searchAdvertModelList =
-                new ArrayList<>();
-        for (int i = 0; i < advertisements.size(); i++) {
-            String name = advertisements.get(i).getName();
-            String surname = advertisements.get(i).getSurname();
-            String communication = advertisements.get(i).getCommunication();
-            String description = advertisements.get(i).getDescription();
-
-            String [] communicationArr = communication.split(" ");
-            String [] descriptionArr = description.split(" ");
-
-            ArrayList<String> materialsList = new ArrayList<>();
-            materialsList.add(name);
-            materialsList.add(surname);
-            materialsList.addAll(Arrays.asList(communicationArr));
-            materialsList.addAll(Arrays.asList(descriptionArr));
-            searchAdvertModelList.add(new AdvertisementSearchModel(advertisements.get(i).getId(), materialsList));
+        ArrayList<Advertisement> advertisementsList = new ArrayList<>();
+        for(Advertisement adv : advertisements) {
+            advertisementsList.add(adv);
         }
-        return searchAdvertModelList;
+
+        //for(Advertisement advertisement : advertisementsList) {
+        //System.out.println(advertisement.getId());
+        //}
+
+        ExtendedAdvertisement [] extendedAdvertisements = new ExtendedAdvertisement[arr.length];
+
+        for (int i = 0; i < arr.length; i++) {
+            extendedAdvertisements[i] = new ExtendedAdvertisement();
+        }
+
+        for (int i = 0; i < arr.length; i++) {
+            extendedAdvertisements[i].setId(advertisementsList.get(i).getId());
+            extendedAdvertisements[i].setClientID(advertisementsList.get(i).getClientID());
+            extendedAdvertisements[i].setName(advertisementsList.get(i).getName());
+            extendedAdvertisements[i].setSurname(advertisementsList.get(i).getSurname());
+            extendedAdvertisements[i].setCommunication(advertisementsList.get(i).getCommunication());
+            extendedAdvertisements[i].setDescription(advertisementsList.get(i).getDescription());
+            extendedAdvertisements[i].setBriefDescription(arr[i]);
+        }
+        return extendedAdvertisements;
     }
 }
